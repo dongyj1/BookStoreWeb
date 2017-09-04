@@ -1,9 +1,12 @@
 package com.bookstore.service.impl;
 
+import org.springframework.stereotype.Service;
+
 import com.bookstore.domain.BillingAddress;
 import com.bookstore.domain.UserBilling;
 import com.bookstore.service.BillingAddressService;
 
+@Service
 public class BillingAddressServiceImpl implements BillingAddressService {
 
 	@Override
