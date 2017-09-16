@@ -34,6 +34,10 @@ public class User implements UserDetails{
 	private String lastName;
 	@Column(name="email", nullable=false, updatable=false)
 	private String email;
+	
+	@OneToMany(mappedBy = "user")
+	private List<Order> orderList;
+	
 	public Long getId() {
 		return id;
 	}
@@ -150,6 +154,12 @@ public class User implements UserDetails{
 	}
 	public void setShoppingCart(ShoppingCart shoppingCart) {
 		this.shoppingCart = shoppingCart;
+	}
+	public List<Order> getOrderList() {
+		return orderList;
+	}
+	public void setOrderList(List<Order> orderList) {
+		this.orderList = orderList;
 	}
 	
 }

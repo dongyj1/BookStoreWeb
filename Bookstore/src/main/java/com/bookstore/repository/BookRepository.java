@@ -9,4 +9,9 @@ import com.bookstore.domain.Book;
 
 public interface BookRepository extends CrudRepository<Book, Long> {
 	List<Book> findAll();
+
+	List<Book> findByTitleContaining(String title);
+
+	List<Book> findByCategory(String category);
+
 }

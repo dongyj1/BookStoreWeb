@@ -13,6 +13,8 @@ public interface UserService {
 	PasswordResetToken getPasswordResetToken(final String token);
 	
 	void createPasswordResetTokenForUser(final User user, final String token);
+	
+	User findById(Long Id);
 
 	User findByUsername(String username);
 	

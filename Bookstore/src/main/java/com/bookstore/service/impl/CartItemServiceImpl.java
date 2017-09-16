@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.bookstore.domain.Book;
 import com.bookstore.domain.BookToCartItem;
 import com.bookstore.domain.CartItem;
+import com.bookstore.domain.Order;
 import com.bookstore.domain.ShoppingCart;
 import com.bookstore.domain.User;
 import com.bookstore.repository.BookToCartItemRepository;
@@ -81,6 +82,18 @@ public class CartItemServiceImpl implements CartItemService {
 		
 		bookToCartItemRepository.deleteByCartItem(cartItem);
 		cartItemRespository.delete(cartItem);
+	}
+
+	@Override
+	public List<CartItem> findByOrder(Order order) {
+		
+		return cartItemRespository.findByOrder(order);
+	}
+
+	@Override
+	public void save(CartItem cartItem) {
+		
+		cartItemRespository.save(cartItem);
 	}
 
 }
